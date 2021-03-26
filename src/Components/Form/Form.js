@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import noImage from './../../assets/no_image.jpg';
 import './Form.css';
+import Dash from '../Dash/Dash';
 
 class Form extends Component {
   constructor(props) {
@@ -17,9 +18,10 @@ class Form extends Component {
   submit() {
     axios.post('/api/post', this.state)
       .then(() => 'replace this string with something useful')
+    this.props.history.push(Dash)
       .catch((err) => console.log(err))
   }
-  
+
   render() {
     let imgSrc = this.state.img ? this.state.img : noImage;
 
@@ -31,7 +33,7 @@ class Form extends Component {
             <p>Title:</p>
             <input value={this.state.title} onChange={e => this.setState({ title: e.target.value })} />
           </div>
-          <img className='form-img-prev' src={imgSrc} alt='preview'/>
+          <img className='form-img-prev' src={imgSrc} alt='preview' />
           <div className='form-input-box'>
             <p>Image URL:</p>
             <input value={this.state.img} onChange={e => this.setState({ img: e.target.value })} />
