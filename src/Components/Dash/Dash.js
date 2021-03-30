@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 import './Dash.css';
 import { Link } from 'react-router-dom';
 
@@ -117,4 +117,4 @@ function mapStateToProps(state) {
   return state;
 }
 
-export default connect(mapStateToProps)(Dash);
+export default mapStateToProps /*connect(mapStateToProps)(Dash)*/;

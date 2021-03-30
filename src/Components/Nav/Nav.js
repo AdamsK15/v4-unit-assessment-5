@@ -5,6 +5,9 @@ import newLogo from './../../assets/new_logo.png';
 import logoutLogo from './../../assets/shut_down.png';
 import './Nav.css';
 import { Link, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+// import updateUser from '../../redux/reducer';
+// import logoutUser from '../../redux/reducer';
 
 
 
@@ -47,4 +50,8 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+function mapStateToProps(state) {
+  return state;
+}
+
+export default withRouter(connect(mapStateToProps,/* { updateUser, logoutUser }*/)(Nav));

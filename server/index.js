@@ -43,4 +43,4 @@ massive({
     app.listen(SERVER_PORT, () => console.log(`DB up & Server running on ${SERVER_PORT}`))
 })
 
-app.listen(SERVER_PORT, _ => console.log(`running on ${SERVER_PORT}`));
+// app.listen(SERVER_PORT, _ => console.log(`running on ${SERVER_PORT}`));
